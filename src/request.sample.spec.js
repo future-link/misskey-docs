@@ -72,8 +72,16 @@ module.exports = {
     "screen-name": "ユーザーのスクリーンネーム(string)(英数のID)"
   },
   "/posts/timeline": {
+    "limit": "取得数(int)(デフォルト = 10)",
+    "since-cursor": "取得開始時の現在位置始点(int)(デフォルト = null)",
+    "max-cursor": "取得開始時の現在位置終点(int)(デフォルト = null)"
   },
   "/posts/user-timeline": {
+    "user-id": "ユーザーのID(ハッシュ値)",
+    "types": ",で区切った取得する投稿の種類 e.g.: 'status, photo, video'",
+    "limit": "取得数(int)(デフォルト = 10)",
+    "since-cursor": "取得開始時の現在位置始点(int)(デフォルト = null)",
+    "max-cursor": "取得開始時の現在位置終点(int)(デフォルト = null)"
   },
   "/posts/mentions/show": {
   },
@@ -93,12 +101,12 @@ module.exports = {
   },
   "/posts/create": {
     "text": /(.+)/,
-    "files": /([0-9a-zA-Z]+(,$|))/
+    "files": /([0-9a-zA-Z]+(,$|))*/
   },
   "/posts/reply": {
     "text": /(.+)/,
     "in-reply-to-post-id": /([0-9a-zA-Z])+/,
-    "files": /([0-9a-zA-Z]+(,$|))/
+    "files": /([0-9a-zA-Z]+(,$|))*/
   },
   "/posts/repost": {
     "post-id": "投稿のハッシュ値"
@@ -185,32 +193,46 @@ module.exports = {
   "/album/files/delete": {
   },
   "/album/files/update-tag": {
+    // 動いてない
   },
   "/album/files/add-tag": {
+    // 動いてない
   },
   "/album/files/remove-tag": {
+    // 動いてない
   },
   "/album/files/find-by-tag": {
+    // 動いてない
   },
   "/album/folders/create": {
+    // 動いてない
   },
   "/album/folders/list": {
+    // 動いてない
   },
   "/album/folders/show": {
+    // 動いてない
   },
   "/album/folders/move": {
+    // 動いてない
   },
   "/album/folders/rename": {
+    // 動いてない
   },
   "/album/tags/create": {
+    // 動いてない
   },
   "/album/tags/list": {
+    // 動いてない
   },
   "/album/tags/recolor": {
+    // 動いてない
   },
   "/album/tags/rename": {
+    // 動いてない
   },
   "/album/tags/delete": {
+    // 動いてない
   },
   "/hashtags/search": {
     "name": "任意の文字列"
