@@ -108,6 +108,7 @@ module.exports = {
     "max-cursor": "取得開始時の現在位置終点(int)(デフォルト = null)"
   },
   "/posts/timeline/unread/count": {
+    // ペイロードなし
   },
   "/posts/create": {
     "text": /(.+)/,
