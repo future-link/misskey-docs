@@ -1,4 +1,4 @@
-{
+module.exports = {
   "/account/name/update": {
     "name": "任意の文字列"
   },
