@@ -84,18 +84,28 @@ module.exports = {
     "max-cursor": "取得開始時の現在位置終点(int)(デフォルト = null)"
   },
   "/posts/mentions/show": {
+    "limit": "取得数(int)(デフォルト = 10)",
+    "since-cursor": "取得開始時の現在位置始点(int)(デフォルト = null)",
+    "max-cursor": "取得開始時の現在位置終点(int)(デフォルト = null)"
   },
   "/posts/mentions/delete-all": {
+    // ペイロードなし
   },
   "/posts/mentions/unread/count": {
+    // ペイロードなし
   },
   "/posts/show": {
+    "post-id": "投稿のハッシュ値"
   },
   "/posts/talk/show": {
     "post-id": "投稿のハッシュ値",
     "limit": "取得上限値(int)(30)"
   },
   "/posts/replies/show": {
+    "post-id": "投稿のハッシュ値",
+    "limit": "取得数(int)(デフォルト = 10)",
+    "since-cursor": "取得開始時の現在位置始点(int)(デフォルト = null)",
+    "max-cursor": "取得開始時の現在位置終点(int)(デフォルト = null)"
   },
   "/posts/timeline/unread/count": {
   },
