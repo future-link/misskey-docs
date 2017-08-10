@@ -1,5 +1,6 @@
 import express from 'express'
 import requests from './src/request.server'
+import responses from './src/response.server'
 import bodyParser from 'body-parser'
 
 const app = new express()
@@ -15,16 +16,16 @@ Object.entries(requests).map(([endpoint, validators])=>{
       if(rule == 'pass') return
       if(!(key in req.body) || !req.body[key]) return
       const target = req.body[key]
-      console.log(key, target, rule)
-      console.log(target.match(rule))
-      (target.match(rule)||[]).length and errors.push(`${key}が不正です。マッチャ「${rule}」`)
+      if(target.match(rule) === null) {
+        errors.push(`${key}が不正です。マッチャ「${rule}」`);
+      }
     });
-    !errors.length ? (res.json({status:'success'})) : (res.status(400) && res.json({status:'fail',errors}));
+    !errors.length ? (res.json(responses[endpoint])) : (res.status(400) && res.json({status:'fail',errors}));
   });
 });
 
 
 const server = app.listen(3000, '0.0.0.0', () => {
-  const { address, port = } server.address();
+  const { address, port } = server.address();
   console.log('App listening at http://%s:%s', address, port)
 });
